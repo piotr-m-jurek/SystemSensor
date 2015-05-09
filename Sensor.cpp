@@ -4,13 +4,18 @@
 #include "Sensor.h"
 using namespace std;
 
-Sensor::Sensor(System* sys,string _name, string _link)
+Sensor::Sensor(){
+	cout << "default sensor ctor" << endl;
+	}
+
+Sensor::Sensor(SensorSystem* sys, string _name, string _link)
 {
 	this->name = _name;
 	this->link = _link;
-	cout << "Sensor: " << name << " ," << name << "." << endl;
+	cout << "Sensor: " << name << " ," << link << "." << endl;
 	sys->Register(this);
 }
+
 Sensor::~Sensor()
 {
 	cout << "~Sensor" << endl;

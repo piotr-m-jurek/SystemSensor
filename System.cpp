@@ -2,14 +2,17 @@
 #include <iostream>
 #include <string>
 #include "Sensor.h"
-#include "TempSensor.h"
 #include "System.h"
 using namespace std;
 
-System::System(){cout << "System()" << endl;}
-System::~System()
+SensorSystem::SensorSystem()
 {
-	cout << "~System()" << endl;
+	cout << "System()" << endl;
+}
+
+SensorSystem::~SensorSystem()
+{
+	cout << "~SensorSystem()" << endl;
 	for (int i = 0; i < sensors.size(); ++i){
 		delete sensors[i];
 		//sensors[i] = NULL;
@@ -17,11 +20,13 @@ System::~System()
 	sensors.clear();
 }
 
-void System::Register(Sensor* sensor)
+void SensorSystem::Register(Sensor* sensor)
 {
 	sensors.push_back(sensor);
 }
-void System::ShowAll(){
+
+void SensorSystem::ShowAll(){
+	cout << endl << "wyswietlenie wszystkich:" << endl;
 	for (int i = 0; i < sensors.size(); ++i)
 	{
 		cout << sensors[i]->ToString() << endl;

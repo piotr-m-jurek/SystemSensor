@@ -10,8 +10,9 @@ private:
 protected:
 	string name, link;
 public:
-	Sensor(System* system,string _name,string _link);
+	Sensor();
+	Sensor(SensorSystem* sys, string _name, string _link);
 	virtual ~Sensor();
-	virtual double measure() = 0;
+	virtual void measure() = 0;
 	virtual string ToString();
 };

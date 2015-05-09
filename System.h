@@ -5,14 +5,17 @@
 #include "Sensor.h"
 using namespace std;
 
-class System
+class Sensor;
+
+class SensorSystem
 {
 private:
 protected:
 	vector <Sensor*> sensors;
 public:
-	System();
-	virtual ~System();
+	SensorSystem();
+	virtual ~SensorSystem();
 	void Register(Sensor* sensor);
 	void ShowAll();
+	void MeasureAll();
 };
