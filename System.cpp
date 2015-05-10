@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <vector>
 #include "Sensor.h"
 #include "System.h"
 using namespace std;
@@ -12,12 +12,12 @@ SensorSystem::SensorSystem()
 
 SensorSystem::~SensorSystem()
 {
-	cout << "~SensorSystem()" << endl;
 	for (int i = 0; i < sensors.size(); ++i){
 		delete sensors[i];
 		//sensors[i] = NULL;
 	}
 	sensors.clear();
+	cout << "~SensorSystem()" << endl;
 }
 
 void SensorSystem::Register(Sensor* sensor)
@@ -30,5 +30,10 @@ void SensorSystem::ShowAll(){
 	for (int i = 0; i < sensors.size(); ++i)
 	{
 		cout << sensors[i]->ToString() << endl;
+	}
+}
+void SensorSystem::MeasureAll(){
+	for (int i = 0; i < sensors.size(); ++i){
+		sensors[i]->measure();
 	}
 }

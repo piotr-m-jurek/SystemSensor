@@ -3,7 +3,8 @@
 #include <string>
 #include <ctime>
 #include <cstdlib>
-
+#include <conio.h>
+#include <vector>
 #include "Sensor.h"
 #include "System.h"
 #include "TempSensor.h"
@@ -11,14 +12,15 @@
 int main()
 {
 	srand(time(NULL));
-	SensorSystem* sys = new SensorSystem();
-
-	Sensor* newSensor = new TempSensor(sys, "w kuchni", "COM", +25.0, +40.0);
-	newSensor->measure();
-	sys->ShowAll();
-	delete newSensor;
-	delete sys;
-	system("pause");
+	SensorSystem* syst = new SensorSystem();
+	//dlaczego wywoluje sie domyslny konstruktor Sensor??
+	Sensor* newSensor = new TempSensor(syst, "w kuchni", "COM", +20.0, +30.0);
+	newSensor = new TempSensor(syst, "w kiblu", "UDP", +18.0, +35.0);
+	newSensor = new TempSensor(syst, "w pokoju", "Ethernet", +18.0, +21.0);
+	syst->MeasureAll();
+	//syst->ShowAll();
+	delete syst;
+	_getch();
 
 	return 0;
 }

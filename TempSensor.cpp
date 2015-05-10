@@ -20,5 +20,5 @@ TempSensor::TempSensor(SensorSystem* sys, string _name, string _link, double min
 TempSensor::~TempSensor(){
 }
 void TempSensor::measure(){
-	cout << (rand() % (int)t_min + (t_max - t_min));
+	cout <<name<<" : "<< ((rand() % (int)(t_max - t_min)) + t_min) << endl;
 }
