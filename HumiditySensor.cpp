@@ -18,5 +18,6 @@ HumiditySensor::HumiditySensor(SensorSystem* sys, string name, string link, doub
 HumiditySensor::~HumiditySensor(){
 }
 void HumiditySensor::measure(){
-	cout<<"Wilgotnosc " <<name<<" : "<< ((rand() % (int)(h_max - h_min)) + h_min)<<"%"<< endl;
+	current_measure=((rand() % (int)(h_max - h_min)) + h_min);
+	cout<<"Wilgotnosc " <<name<<" : "<<current_measure<<"%"<< endl;
 }
