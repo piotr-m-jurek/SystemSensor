@@ -35,7 +35,10 @@ void SensorSystem::ShowAll(){
 void SensorSystem::MeasureAll(){
 	for (int i = 0; i < sensors.size(); ++i){
 		
-		sensors[i]->measure();
-		
+		sensors[i]->measure(syst);
 	}
+}
+
+void SensorSystem::CriticalValue(Sensor* sensor){
+	cout <<"wartosc krytyczna zostala przekroczona: "<<sensor->current_measure<< " przez sensor: " <<sensor->ToString()<<endl;
 }
