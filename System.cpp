@@ -35,7 +35,7 @@ void SensorSystem::ShowAll(){
 void SensorSystem::MeasureAll(){
 	for (int i = 0; i < sensors.size(); ++i){
 		
-		sensors[i]->measure(syst);
+		sensors[i]->measure(this);
 	}
 }
 

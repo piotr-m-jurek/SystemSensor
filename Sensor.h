@@ -15,7 +15,7 @@ public:
 	Sensor();
 	Sensor(SensorSystem* sys, string _name, string _link);
 	virtual ~Sensor();
-	virtual void measure() = 0;
+	virtual void measure(SensorSystem* sys) = 0;
 	virtual string ToString();
 	//void CriticalValue();
 };

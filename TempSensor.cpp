@@ -23,6 +23,5 @@ void TempSensor::measure(SensorSystem* sys){
 	if (t_crit<=current_measure)
 	{
 		sys->CriticalValue(this);
-	};
-
+	}
 }
