@@ -22,3 +22,14 @@ Sensor::~Sensor()
 string Sensor::ToString(){
 	return name;
 }
+
+//void Sensor::CriticalValue()
+//{
+//	if(current_measure>)
+//	{
+//		cout<<"Wartosc krytyczna zostala przekroczona: "<<current_measure<<endl;
+//
+//	}
+//
+//}
+
