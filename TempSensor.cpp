@@ -15,8 +15,9 @@ TempSensor::TempSensor(SensorSystem* sys, string name, string link, double t_min
 	cout << "TempSensor: " << name << " ," << link << "." << endl;
 	
 }
-TempSensor::~TempSensor(){
-}
+TempSensor::~TempSensor(){}
+
+
 void TempSensor::measure(SensorSystem* sys){
 	current_measure = ((rand() % (int)(t_max - t_min)) + t_min);
 	cout<<"Temperatura " <<name<<" : "<<current_measure<<"*C" << endl;

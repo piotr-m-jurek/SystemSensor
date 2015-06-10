@@ -1,2 +1,3 @@
-w kuchni	20
-w pokoju	90
+w kuchni	23
+w pokoju	9
+w kiblu	25
