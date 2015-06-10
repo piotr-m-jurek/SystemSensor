@@ -35,7 +35,7 @@ mutex.unlock();
 	//newSensor = new TempSensor(syst, "w pokoju", "Ethernet", +18.0, +21.0);
 	syst->MeasureAll();
 	//syst->ShowAll();
-
+	syst->MeasureToFile();
 	delete syst;
 	_getch();
 	return 0;

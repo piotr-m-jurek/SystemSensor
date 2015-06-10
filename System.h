@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Sensor.h"
+#include <fstream>
 using namespace std;
 
 class Sensor;
@@ -18,4 +19,6 @@ public:
 	void ShowAll();
 	void MeasureAll();
 	void CriticalValue(Sensor* sensor);
+	void MeasureToFile();
+
 };

@@ -42,3 +42,23 @@ void SensorSystem::MeasureAll(){
 void SensorSystem::CriticalValue(Sensor* sensor){
 	cout <<"wartosc krytyczna zostala przekroczona: "<<sensor->current_measure<< " przez sensor: " <<sensor->ToString()<<endl;
 }
+
+void SensorSystem::MeasureToFile(){
+	cout << "\n\nteraz nastapi zapis do pliku:" << endl;
+
+	ofstream toFile;
+	toFile.open("pomiary.txt",ios::out);
+	if (toFile.is_open()){
+		for (int i = 0; i < sensors.size(); ++i){
+			toFile << sensors[i]->ToString() <<"\t"<< sensors[i]->current_measure << endl;
+		}
+		toFile.close();
+	}
+	else{
+		cout << "nie mozna otworzyc pliku!";
+		exit(1);
+	}
+	
+
+
+}
